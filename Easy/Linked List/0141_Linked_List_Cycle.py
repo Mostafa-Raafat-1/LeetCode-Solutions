@@ -1,3 +1,17 @@
+"""
+LeetCode 141 - Linked List Cycle
+
+Difficulty: Easy
+
+Time Complexity: O(n)
+Space Complexity: O(1)
+
+Technique:
+- Floyd's Cycle Detection (Tortoise and Hare)
+- Slow & Fast Pointers
+"""
+
+
 # Definition for singly-linked list.
 from typing import Optional
 
