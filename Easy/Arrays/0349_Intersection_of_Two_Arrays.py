@@ -1,0 +1,16 @@
+"""
+LeetCode 349 - Intersection of Two Arrays
+
+Difficulty: Easy
+
+Time Complexity: O(n + m)
+Space Complexity: O(n + m)
+"""
+
+
+from typing import List
+
+
+class Solution:
+    def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        return list(set(nums1) & set(nums2))
