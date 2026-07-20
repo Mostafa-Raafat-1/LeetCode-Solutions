@@ -10,23 +10,16 @@ Technique:
 - Hash Map (Frequency Counting)
 """
 
+from collections import Counter
+
 
 class Solution:
     def canConstruct(self, ransomNote: str, magazine: str) -> bool:
-        ransom_note_chars = {}
-        magazine_chars = {}
+        counts = Counter(magazine)
 
         for char in ransomNote:
-            count = ransom_note_chars.get(char, 0) + 1
-            ransom_note_chars[char] = count
-
-        for char in magazine:
-            count = magazine_chars.get(char, 0) + 1
-            magazine_chars[char] = count
-
-        for char in ransom_note_chars:
-            magazine_count = magazine_chars.get(char)
-            if not magazine_count or magazine_count < ransom_note_chars[char]:
+            if counts[char] == 0:
                 return False
+            counts[char] -= 1
 
         return True
