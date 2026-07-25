@@ -35,10 +35,10 @@ which consists of:
 
 | Difficulty | Solved |
 |------------|--------|
-| Easy | 35 |
-| Medium | 9 |
+| Easy | 36 |
+| Medium | 10 |
 | Hard | 0 |
-| **Total** | 44 |
+| **Total** | 46 |
 
 ---
 
