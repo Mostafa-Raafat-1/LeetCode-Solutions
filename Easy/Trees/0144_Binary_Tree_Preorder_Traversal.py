@@ -21,17 +21,35 @@ class TreeNode:
         self.right = right
 
 
+"""-------------- Recursive --------------"""
+# class Solution:
+#     def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+#         result = []
+
+#         def preorder(node):
+#             if not node:
+#                 return
+
+#             result.append(node.val)
+#             preorder(node.left)
+#             preorder(node.right)
+
+#         preorder(root)
+#         return result
+
+
+"""-------------- Iterative --------------"""
 class Solution:
     def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
         result = []
+        stack = [root] if root else []
 
-        def preorder(node):
-            if not node:
-                return
-
+        while stack:
+            node = stack.pop()
             result.append(node.val)
-            preorder(node.left)
-            preorder(node.right)
+            if node.right:
+                stack.append(node.right)
+            if node.left:
+                stack.append(node.left)
 
-        preorder(root)
         return result
