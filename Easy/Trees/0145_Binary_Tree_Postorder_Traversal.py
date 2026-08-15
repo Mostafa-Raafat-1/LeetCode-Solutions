@@ -21,17 +21,44 @@ class TreeNode:
         self.right = right
 
 
+"""-------------- Recursive --------------"""
+# class Solution:
+#     def postorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+#         result = []
+
+#         def postorder(node):
+#             if not node:
+#                 return
+
+#             postorder(node.left)
+#             postorder(node.right)
+#             result.append(node.val)
+
+#         postorder(root)
+#         return result
+
+
+"""-------------- Iterative --------------"""
 class Solution:
     def postorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
         result = []
+        stack = []
+        node = root
+        last_visited = None
 
-        def postorder(node):
-            if not node:
-                return
+        while node or stack:
+            if node:
+                stack.append(node)
+                node = node.left
+            else:
+                node = stack[-1]
 
-            postorder(node.left)
-            postorder(node.right)
-            result.append(node.val)
+                if node.right and node.right != last_visited:
+                    node = node.right
+                else:
+                    result.append(node.val)
+                    last_visited = node
+                    stack.pop()
+                    node = None
 
-        postorder(root)
         return result
