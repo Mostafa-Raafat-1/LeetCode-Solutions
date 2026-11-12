@@ -60,7 +60,7 @@ LeetCode 200 - Number of Islands
 Difficulty: Medium
 
 Time Complexity: O(m * n)
-Space Complexity: O(min(m, n))
+Space Complexity: O(m * n)
 
 Technique:
 - Breadth-First Search (BFS)
