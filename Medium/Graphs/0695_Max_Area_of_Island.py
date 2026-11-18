@@ -56,7 +56,7 @@ LeetCode 695 - Max Area of Island
 Difficulty: Medium
 
 Time Complexity: O(m * n)
-Space Complexity: O(min(m, n))
+Space Complexity: O(m * n)
 
 Technique:
 - Breadth-First Search (BFS)
@@ -105,7 +105,7 @@ class Solution:
                             grid[ni][nj] = 0
                             queue.append((ni, nj))
 
-                    max_area = max(max_area, current)
+                max_area = max(max_area, current)
 
         return max_area
 
